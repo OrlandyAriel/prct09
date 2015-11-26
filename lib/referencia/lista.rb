@@ -1,6 +1,7 @@
 Node = Struct.new(:value,:next,:previus)
 class Lista
-  attr_reader :inicio, :fin, :tamanio
+  include Enumerable
+  attr_accessor:inicio, :fin, :tamanio
   #Constructor
   def initialize
     @inicio = Node.new(nil)
@@ -72,5 +73,11 @@ class Lista
     @fin = @fin.previus
     @fin.next = nil
   end
-  
+  def each
+    aux =self.inicio
+    while aux.next != nil do
+      yield aux.value.m_autores
+      aux = aux.next
+    end
+  end
 end

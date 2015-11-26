@@ -232,13 +232,16 @@ describe Referencia do
          before :each do
             @libro1 = Libro.new(["George R.R Martin"],"Juego de Tronos: Canción de Hielo y Fuego","2006","Narrativa Fantastica","Gigamesh",["ISBN:9788496208377"])
             @revista1 = Revista.new(["Maldonado, C.A","Etheverry, P"],"Blende Learning 2.0 con Mundos Virtuales","2013","Universidad Empresarial Siglo 21.","Vol X","200")
-            @periodico1 = Periodico.new("Risto Mejide","Un artículo de los de antes","2014","elPeriódico","1")
+            @periodico1 = Periodico.new(["Risto Mejide"],"Un artículo de los de antes","2014","elPeriódico","1")
             @docElectornico1 = DocumentoElectronico.new(["Rafael Vida"],"Blaster versus Welchi: Modelado del malware competitivo","2015","Madrid","http://www.elladodelmal.com/2015/11/blaster-versus-welchi-modelado-del.html")
             @lista = Lista.new()
             @lista.insertar_final(@libro1,@revista1,@periodico1,@docElectornico1)
         end
-        it "Comprobar each" do
-            @lista.each
+        it "Comprobar min" do
+            expect(@lista.min==@libro1.m_autores).to eq(true)
+        end
+        it "Comprobar min" do
+            expect(@lista.min==@libro1.m_autores).to eq(true)
         end
     end
 end
