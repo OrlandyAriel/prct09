@@ -240,8 +240,11 @@ describe Referencia do
         it "Comprobar min" do
             expect(@lista.min==@libro1.m_autores).to eq(true)
         end
-        it "Comprobar min" do
+        it "Comprobar max" do
             expect(@lista.min==@libro1.m_autores).to eq(true)
+        end
+        it "Comprueba count " do
+            expect(@lista.count).to eq(3)
         end
     end
 end
