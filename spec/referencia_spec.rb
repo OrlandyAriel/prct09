@@ -207,4 +207,16 @@ describe Referencia do
             expect(@periodico.class).to eq(@periodico.class)
         end
     end
+    context "# MODULOS" do
+         before :each do
+            @res=ReferenciaBase.new(["Pepe Perez"],"Las Pruebas de referencia","2014")
+            @libro = Libro.new(["George R.R Martin"],"Juego de Tronos: Canción de Hielo y Fuego","2006","Narrativa Fantastica","Gigamesh",["ISBN:9788496208377"])
+            @revista = Revista.new(["Maldonado, C.A","Etheverry, P"],"Blende Learning 2.0 con Mundos Virtuales","2013","Universidad Empresarial Siglo 21.","Vol 1","200")
+            @periodico = Periodico.new("Risto Mejide","Un artículo de los de antes","2014","elPeriódico","1")
+            @docElectornico = DocumentoElectronico.new(["Rafael Vida"],"Blaster versus Welchi: Modelado del malware competitivo","2015","Madrid","http://www.elladodelmal.com/2015/11/blaster-versus-welchi-modelado-del.html")
+        end
+        it "Comprobar <=> (<)" do
+            expect(@libro < @revista).to eq(true)
+        end
+    end
 end
