@@ -238,10 +238,10 @@ describe Referencia do
             @lista.insertar_final(@libro1,@revista1,@periodico1,@docElectornico1)
         end
         it "Comprobar min" do
-            expect(@lista.min==@libro1.m_autores).to eq(true)
+            expect(@lista.min==@libro1).to eq(true)
         end
         it "Comprobar max" do
-            expect(@lista.min==@libro1.m_autores).to eq(true)
+            expect(@lista.max==@periodico1).to eq(true)
         end
         it "Comprueba count " do
             expect(@lista.count).to eq(3)

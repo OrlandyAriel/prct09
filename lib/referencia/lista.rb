@@ -76,7 +76,7 @@ class Lista
   def each
     aux =self.inicio
     while aux.next != nil do
-      yield aux.value.m_autores
+      yield aux.value
       aux = aux.next
     end
   end
